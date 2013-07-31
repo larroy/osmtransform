@@ -40,6 +40,7 @@ class Stitch(object):
         self.polygons = list()
         # The ones we have gone through when processing
         self.seen = dict()
+        # list of ids of ways hashed by endpoint
         self.id = collections.defaultdict(list)
         self.heuristic_closing = heuristic_closing
         self.relid = relid
