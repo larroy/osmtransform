@@ -1,0 +1,45 @@
+mongo planet --eval "db.dropDatabase()"
+
+
+Nodetags:
+place = city | town | village | hamlet | suburb
+population
+barrier = toll_booth
+
+
+way:
+oneway (yes|no|-1)
+junction = roundabout
+highway = motorway | motorway_link
+ref
+place_name
+place
+maxspeed
+
+relation:
+type
+restriction
+except
+
+
+Design
+======
+
+For each feature, calculate level into which the feature will be available. Then compute the list of
+quadkeys of the quads that the feature's bounding box will intersect.
+
+Then we can simplify the geometry and insert a simplified object in the required quad.
+
+Simplify.
+
+Clip.
+
+python -m doctest -v simplify.py
+python -m unittest testmodule
+
+> db.relation.find({"tags.name": a['tags']['name']})[1]["_id"]
+
+
+
+
+1208882  interesting case, overlapping polygons
