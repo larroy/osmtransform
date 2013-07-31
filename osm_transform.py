@@ -58,8 +58,8 @@ def processWays(sink):
 def main():
     sink = planet.Sink()
     logging.basicConfig(level=logging.DEBUG)
+    processWays(sink)
     processRelations(sink)
-    #processWays(sink)
     return 0
 
 if __name__ == '__main__':
